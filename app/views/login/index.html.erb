@@ -1,0 +1,14 @@
+<%=notice%>
+<%= form_for :usertable , url: login_loginuser_path do |f| %>
+    <div class="field">
+      <%= f.label :用户名 %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :密码 %><br>
+      <%= f.text_field :pwd %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

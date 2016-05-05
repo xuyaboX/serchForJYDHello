@@ -1,0 +1,19 @@
+
+<h1>关键字:<%=@keyworld%></h1>
+<table>
+  <thead>
+  <tr>
+    <th>书名</th>
+  </tr>
+  </thead>
+  <!--循环从数据库中读取到的数据-->
+  <tbody>
+  <% @books.each do |doc|%>
+      <tr>
+        <td><%= doc["bookname"] %></td>
+        <td><%= link_to '关联书名', usertable_path(doc["id"]) %> </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,25 @@
+<%= form_for(@usertable) do |f| %>
+  <% if @usertable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usertable.errors.count, "error") %> prohibited this usertable from being saved:</h2>
+
+      <ul>
+      <% @usertable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :用户名 %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :密码 %><br>
+    <%= f.text_field :pwd %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

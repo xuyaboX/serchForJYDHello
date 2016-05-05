@@ -1,0 +1,9 @@
+<%= form_for :book , url: book_selectsolr_path do |f| %>
+    <div class="field">
+      <%= f.label :书名 %><br>
+      <%= f.text_field :bookname %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

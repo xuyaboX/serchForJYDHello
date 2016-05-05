@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>用户名:</strong>
+  <%= @usertable.name %>
+</p>
+
+<p>
+  <strong>密码:</strong>
+  <%= @usertable.pwd %>
+</p>
+
+<%= link_to '修改信息', edit_usertable_path(@usertable) %> |
+<%= link_to '返回信息', usertables_path %>

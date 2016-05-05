@@ -1,0 +1,40 @@
+<h1>添加图书</h1>
+<table>
+  <thead>
+  <tr>
+    <th>书名</th>
+
+  </tr>
+  </thead>
+  <!--循环从数据库中读取到的数据-->
+  <tbody>
+  <% @booklists.each do |book| %>
+      <tr>
+        <td><%= book.bookname %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+<%= form_for :book , url: book_addbooks_path do |f| %>
+    <div class="field">
+      <%= f.label :书名 %><br>
+      <%= f.text_field :bookname %>
+    </div>
+    <div class="field">
+      <%= f.label :关键字 %><br>
+      <%= f.text_field :bookkey %>
+    </div>
+    <div class="field">
+      <%= f.label :描述 %><br>
+      <%= f.text_field :bookmiaosu %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%=notice%>

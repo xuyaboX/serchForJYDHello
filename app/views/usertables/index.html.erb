@@ -1,0 +1,27 @@
+<!--用于显示返回回来的信息-->
+<p id="notice"><%= notice %></p>
+<h1>这里是所有的用户信息</h1>
+<table>
+  <thead>
+    <tr>
+      <th>用户名</th>
+      <th>密码</th>
+      <th colspan="3">操作</th>
+    </tr>
+  </thead>
+  <!--循环从数据库中读取到的数据-->
+  <tbody>
+    <% @usertables.each do |usertables| %>
+      <tr>
+        <td><%= usertables.name %></td>
+        <td><%= usertables.pwd %></td>
+        <td><%= link_to "显示详细信息", usertable_path(usertables) %></td>
+        <td><%= link_to "修改数据", edit_usertable_path(usertables) %></td>
+        <td><%= link_to "删除数据", usertable_path(usertables), method: :delete, data: { confirm: '您确定要修改吗?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "注册用户", new_usertable_path %>
+<br>
+
